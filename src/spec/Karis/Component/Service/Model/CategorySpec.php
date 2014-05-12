@@ -54,6 +54,17 @@ class CategorySpec extends ObjectBehavior
         
         $product->setCategory($this);
         $this->addProduct($product);
+        $this->hasProduct($product)->shouldReturn(true);
+    }
+    
+    function it_removes_product(\Karis\Component\Service\Model\ProductInterface $product) {
+        
+        $product->setCategory($this);
+        $this->addProduct($product);
+        $this->hasProduct($product)->shouldReturn(true);
+        
+        $product->setCategory(null);
+        $this->removeProduct($product);
         $this->hasProduct($product)->shouldReturn(false);
     }
 }
