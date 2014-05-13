@@ -23,7 +23,6 @@ class ResolveDoctrineTargetEntitiesPass implements \Symfony\Component\Dependency
         
         $resolveTargetEntityListener = $container->findDefinition('doctrine.orm.listeners.resolve_target_entity');
         foreach ($this->interfaces as $interface => $model) {
-            var_dump($model);
             $resolveTargetEntityListener
                 ->addMethodCall('addResolveTargetEntity', array(
                 $interface, $model, array()

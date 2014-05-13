@@ -15,6 +15,9 @@
         <field name="description" column="price" type="string">
             
         </field>
+        <many-to-one field="category" target-entity="\Karis\Component\Service\Model\Category">
+            <join-column name="category_id" referenced-column-name="id" nullable="false" />
+        </many-to-one>
         
     </entity>
 
