@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  >
+
+    <entity name="Karis\Component\Service\Model\Product" table="karis_product">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+        <field name="name" column="name" type="string">
+            
+        </field>
+        <field name="description" column="price" type="string">
+            
+        </field>
+        
+    </entity>
+
+</doctrine-mapping>
