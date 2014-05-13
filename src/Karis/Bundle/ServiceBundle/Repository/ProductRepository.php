@@ -9,7 +9,18 @@ namespace Karis\Bundle\ServiceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-class ProductRepository extends EntityRepository {
+
+class ProductRepository extends EntityRepository  {
+    
+    /**
+     * create new Ressource
+     */
+    public function createNew()
+    {
+        $className = $this->getClassName();
+
+        return new $className;
+    }
     
     /**
      * @return QueryBuilder

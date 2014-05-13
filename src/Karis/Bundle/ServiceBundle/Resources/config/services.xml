@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+                               http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="karis.builder.product.class">Karis\Component\Service\Builder\ProductBuilder</parameter>
+        <parameter key="karis.repository.product.class">Karis\Component\Service\Repository\ProductRepository</parameter>
+    </parameters>
+
+    <services>
+        
+        <service id="karis.repository.product" class="%karis.repository.product.class%">
+            
+        </service>
+        <service id="karis.builder.product" class="%karis.builder.product.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="karis.repository.product" />
+            
+        </service>
+        
+    </services>
+
+</container>

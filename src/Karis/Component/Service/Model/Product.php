@@ -32,8 +32,10 @@ class Product implements ProductInterface {
      * @var string
      */
     protected $description;
+    
+    protected $category;
 
-     /**
+    /**
      * {@inheritdoc}
      */
     public function getId()
@@ -64,7 +66,7 @@ class Product implements ProductInterface {
      */
     public function getCategory()
     {
-        return parent::getOject();
+        return $this->category;
     }
 
     /**
@@ -72,7 +74,7 @@ class Product implements ProductInterface {
      */
     public function setCategory(CategoryInterface $category = null)
     {
-        return parent::setObject($category);
+        return $this->category = $category;
     }
 
 }
