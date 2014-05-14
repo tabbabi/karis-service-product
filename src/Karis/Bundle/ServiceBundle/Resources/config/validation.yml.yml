@@ -1,0 +1,21 @@
+Karis\Component\Service\Model\Product:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 3
+                max: 255
+        description:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 255
+Karis\Component\Service\Model\Category:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 255
+        price:
+            - NotBlank: ~

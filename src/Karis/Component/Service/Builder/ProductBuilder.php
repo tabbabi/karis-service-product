@@ -34,7 +34,9 @@ class ProductBuilder implements ProductBuilderInterface {
     }
 
         public function create($name) {
-        
+            $this->product = $this->productRepository->createNew();
+            $this->product->setName($name);
+            return $this;
     }
 
     public function save($flush = true) {
@@ -45,5 +47,7 @@ class ProductBuilder implements ProductBuilderInterface {
         }
         return $this->product;
     }
+    
+    
 
 }
