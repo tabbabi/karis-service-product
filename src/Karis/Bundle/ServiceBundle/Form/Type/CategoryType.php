@@ -10,11 +10,11 @@ namespace Karis\Bundle\ServiceBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 /**
- * Description of ProductType
+ * Description of Category
  *
  * @author marouentabbabi
  */
-class ProductType extends AbstractType {
+class CategoryType extends AbstractType{
     
     protected $dataClass;
     
@@ -32,8 +32,7 @@ class ProductType extends AbstractType {
         
         $builder
                 ->add('name', 'text',array())
-                ->add('description', 'textarea', array())
-                ->add('category','entity', array('data' => 'Karis\Component\Service\Model\Category'))
+                ->add('price', null, array())
                 ;
     }
     
@@ -44,6 +43,7 @@ class ProductType extends AbstractType {
     }
 
     public function getName() {
-        return 'karis_product';
+        return 'karis_category';
     }
+
 }
