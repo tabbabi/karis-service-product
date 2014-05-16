@@ -7,6 +7,11 @@ use Prophecy\Argument;
 
 class RessourceControllerSpec extends ObjectBehavior
 {
+    function let(\Karis\Bundle\ServiceBundle\Controller\Configuration $configuration)
+    {
+        $this->beConstructedWith($configuration);
+    }
+            
     function it_is_initializable()
     {
         $this->shouldHaveType('Karis\Bundle\ServiceBundle\Controller\RessourceController');

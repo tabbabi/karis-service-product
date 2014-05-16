@@ -58,4 +58,6 @@ class ConfigurationSpec extends ObjectBehavior
         $this->getPluralRessourceName()->shouldReturn('products');
     }
     
+    
+    
 }

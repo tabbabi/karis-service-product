@@ -1,3 +1,3 @@
-service_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ServiceBundle:Default:index }
+karis_product_index:
+    pattern:  /home
+    defaults: { _controller: karis.controller.product:indexAction }

@@ -10,6 +10,8 @@
     <parameters>
         <parameter key="karis.builder.product.class">Karis\Component\Service\Builder\ProductBuilder</parameter>
         <parameter key="karis.repository.product.class">Karis\Component\Service\Repository\ProductRepository</parameter>
+        <parameter key="karis.controller.product.class">Karis\Bundle\ServiceBundle\Controller\ProductController</parameter>
+        <parameter key="karis.controller.configuration_factory.class">Karis\Bundle\ServiceBundle\Controller\ConfigurationFactory</parameter>
     </parameters>
 
     <services>
@@ -21,6 +23,22 @@
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="karis.repository.product" />
             
+        </service>
+        
+        <service id="karis.controller.configuration_factory" class="%karis.controller.configuration_factory.class%"/>
+    <service id="karis.controller.product" class="%karis.controller.product.class%">
+            <argument type="service">
+                <service factory-service="karis.controller.configuration_factory" factory-method="createConfiguration" class="Karis\Bundle\ServiceBundle\Controller\Configuration">
+                    <argument>karis</argument>
+                    <argument>product</argument>
+                    <argument>ServiceBundle:Product</argument>
+                    
+                </service>
+            
+            </argument>
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
         </service>
         
     </services>

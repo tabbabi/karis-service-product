@@ -5,7 +5,6 @@ namespace Karis\Bundle\ServiceBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use Karis\Bundle\ServiceBundle\Controller\Configuration;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Description of RessourceController
@@ -14,29 +13,18 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class RessourceController extends FOSRestController{
     
-  
-       /**
-        * @var Configuration
-        */
-       protected $config;
-       
-    public function __construct(Configuration $config)
+    protected $conf;
+
+
+    public function __construct(Configuration $configuration)
     {
-        
-       $this->conf = $config;
+        $this->conf = $configuration;
     }
     
-    public function setContainer(ContainerInterface $container = null)
-    {
-        parent::setContainer($container);
-
-        
-    }
-
-
+    
     public function getConfiguration()
     {
-        return $this->config;
+        return $this->conf;
     }
     
     /**
