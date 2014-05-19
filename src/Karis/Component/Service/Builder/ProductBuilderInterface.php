@@ -15,8 +15,13 @@ use Karis\Component\Service\Model\ProductInterface;
 interface ProductBuilderInterface {
     
   
-    
     /**
+     * Create new Product 
+     * @param string $name
+     */
+    public function create($name);
+
+        /**
      * Save product
      * @param Boolean $flush
      * 

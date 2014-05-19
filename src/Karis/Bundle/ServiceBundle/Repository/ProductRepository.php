@@ -18,7 +18,7 @@ class ProductRepository extends EntityRepository  {
     public function createNew()
     {
         $className = $this->getClassName();
-
+        
         return new $className;
     }
     
