@@ -54,6 +54,9 @@ class ConfigurationSpec extends ObjectBehavior
         $this->getPluralRessourceName()->shouldReturn('products');
     }
     
-    
+    function it_returns_service_name()
+    {
+        $this->getServiceName('repository')->shouldReturn('karis.repository.product');
+    }
     
 }

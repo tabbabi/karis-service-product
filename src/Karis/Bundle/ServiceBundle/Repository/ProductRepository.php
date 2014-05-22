@@ -8,9 +8,11 @@
 namespace Karis\Bundle\ServiceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Karis\Component\Service\Repository\RepositoryInterface;
 
 
-class ProductRepository extends EntityRepository  {
+class ProductRepository extends EntityRepository implements RepositoryInterface  {
+    
     
     /**
      * create new Ressource
@@ -33,7 +35,7 @@ class ProductRepository extends EntityRepository  {
     
 
 
-        /**
+    /**
      * {@inheritdoc}
      */
     protected function getAlias()

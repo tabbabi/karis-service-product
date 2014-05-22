@@ -69,9 +69,6 @@ class Configuration {
         return sprintf('%s:%s.%s', $this->templateNamespace ?: ':', $name, $this->templatingEngine);
     }
     
-    
-    
-    
     public function getRouteName($name)
     {
         return sprintf('%s_%s_%s', $this->bundlePrefix, $this->resourceName, $name);
@@ -80,6 +77,11 @@ class Configuration {
     public function getPluralRessourceName()
     {
         return Inflector::pluralize($this->resourceName);
+    }
+    
+    public function getServiceName($service)
+    {
+        return sprintf('%s.%s.%s', $this->bundlePrefix, $service, $this->resourceName);
     }
 
    

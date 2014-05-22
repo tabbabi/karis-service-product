@@ -22,7 +22,8 @@ class ProductController extends RessourceController
     
     public function indexAction()
     {
-       return $this->render($this->conf->getTemplateName('index.html'));
+        $productRepository = $this->get($this->config->getServiceName('repository'));
+       return $this->render($this->config->getTemplateName('index.html'));
     }
     
 }

@@ -9,15 +9,16 @@
 
     <parameters>
         <parameter key="karis.builder.product.class">Karis\Component\Service\Builder\ProductBuilder</parameter>
-        <parameter key="karis.repository.product.class">Karis\Component\Service\Repository\ProductRepository</parameter>
+        <parameter key="karis.repository.product.class">Karis\Bundle\ServiceBundle\Repository\ProductRepository</parameter>
         <parameter key="karis.controller.product.class">Karis\Bundle\ServiceBundle\Controller\ProductController</parameter>
         <parameter key="karis.controller.configuration_factory.class">Karis\Bundle\ServiceBundle\Controller\ConfigurationFactory</parameter>
     </parameters>
 
     <services>
         
-        <service id="karis.repository.product" class="%karis.repository.product.class%">
-            
+        <service id="karis.repository.product" class="%karis.repository.product.class%" factory-service="doctrine.orm.entity_manager"
+                 factory-method="getRepository">
+            <argument>Karis\Component\Service\Model\Product</argument>
         </service>
         <service id="karis.builder.product" class="%karis.builder.product.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
