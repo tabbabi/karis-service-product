@@ -23,7 +23,7 @@ class RessourceController extends FOSRestController{
     public function __construct(Configuration $config)
     {
         
-       $this->conf = $config;
+       $this->config = $config;
     }
     
     public function setContainer(ContainerInterface $container = null)
@@ -34,7 +34,7 @@ class RessourceController extends FOSRestController{
     }
 
 
-    public function getConfiguration()
+    protected function getConfiguration()
     {
         return $this->config;
     }
@@ -44,7 +44,7 @@ class RessourceController extends FOSRestController{
      *
      * @return FormInterface
      */
-    public function getForm($ressource = null)
+    protected function getForm($ressource = null)
     {
        return $this->createForm($this->config->getFormType(), $ressource);
     }
@@ -54,11 +54,12 @@ class RessourceController extends FOSRestController{
      * 
      * @return EntityRepository
      */
-    public function getRepository($name)
+    protected function getRepository($name)
     {
         return $this->container->get('doctrine')->getRepository($this->config->getTemplateNamespace($name));
     }
     
    
+
     
 }

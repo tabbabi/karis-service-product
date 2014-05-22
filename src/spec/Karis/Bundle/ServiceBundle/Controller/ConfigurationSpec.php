@@ -43,10 +43,6 @@ class ConfigurationSpec extends ObjectBehavior
         $this->getTemplateName('index.html')->shouldReturn('KarisServiceBundle:Product:index.html.twig');
     }
     
-    function it_generates_form_type_by_default()
-    {
-        $this->getFormType()->shouldReturn('karis_product');
-    }
     
     function it_returns_route_name()
     {

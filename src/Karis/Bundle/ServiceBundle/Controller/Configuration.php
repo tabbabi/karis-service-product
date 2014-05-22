@@ -32,10 +32,7 @@ class Configuration {
      */
     protected $templatingEngine;
 
-    /**
-     * @var array
-     */
-    protected $parameters;
+   
     
     
     public function __construct($bundlePrefix, $resourceName, $templateNamespace, $templatingEngine = 'twig') {
@@ -72,15 +69,8 @@ class Configuration {
         return sprintf('%s:%s.%s', $this->templateNamespace ?: ':', $name, $this->templatingEngine);
     }
     
-    public function getTemplate($name)
-    {
-        $this->get('template', $this->getTemplateName($name));
-    }
     
-    public function getFormType()
-    {
-        return $this->get('form', sprintf('%s_%s', $this->bundlePrefix, $this->resourceName));
-    }
+    
     
     public function getRouteName($name)
     {
@@ -92,8 +82,5 @@ class Configuration {
         return Inflector::pluralize($this->resourceName);
     }
 
-        public function get($parameters, $default = null)
-    {
-        return isset($this->parameters[$parameters]) ? $this->parameters[$parameters] : $default;
-    }
+   
 }
