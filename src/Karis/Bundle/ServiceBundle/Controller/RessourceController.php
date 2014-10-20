@@ -26,13 +26,6 @@ class RessourceController extends FOSRestController{
        $this->config = $config;
     }
     
-    public function setContainer(ContainerInterface $container = null)
-    {
-        parent::setContainer($container);
-
-        
-    }
-
 
     protected function getConfiguration()
     {
